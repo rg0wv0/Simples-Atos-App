@@ -23,7 +23,7 @@ const openUrl = (url) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.yellow,
+    backgroundColor: colors.white,
   },
 });
 
