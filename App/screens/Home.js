@@ -8,6 +8,7 @@ import {
   StyleSheet, 
   StatusBar,
   View,
+  Dimensions,
   Image } from 'react-native';
 
 import { Entypo } from '@expo/vector-icons';
@@ -16,6 +17,7 @@ import colors from '../constants/colors';
 
 import { TextItem, TextSeparator } from '../components/TextItem'
 
+const screen = Dimensions.get('window');
 const openUrl = (url) => {
   return Linking.openURL(url).catch(() => {
   Alert.alert('Desculpe, algo deu errado.', 'Por favor tente de novo mais tarde.');
@@ -28,16 +30,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    width: 100,
-    height: 150,
+    width: screen.width * 0.4,
+    height: screen.height * 0.25,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
   },
   imageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
   }
 });
 
@@ -62,8 +62,8 @@ export default () => {
         </TouchableOpacity>
 
         <View style={styles.imageContainer}>
-          <Image source={require('../assets/images/planta-cor.png')} style={styles.image} />
-          <Image source={require('../assets/images/baloes-cor.png')} style={styles.image} />
+          <Image source={require('../assets/images/planta-cor.png')} style={styles.image} resizeMode="contain" />
+          <Image source={require('../assets/images/baloes-cor.png')} style={styles.image} resizeMode="contain" />
         </View>
 
       </ScrollView>
