@@ -19,23 +19,21 @@ const openUrl = (url) => {
 });
 }
 
-export default () => {
+export default ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
         <StatusBar barStyle="dark-content" />
 
-        <TextItem 
-          text="Como Usar"
-        />
+        <TextItem text="Como Usar" />
 
         <TextSeparator />
 
-        <TextItem 
-          text="Olá, tudo bem?"
-        />
-
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
+          <TextItem text="Olá, tudo bem?" />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.push('Ato1')}>
           <Entypo name="heart" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 100}} />
         </TouchableOpacity>
 

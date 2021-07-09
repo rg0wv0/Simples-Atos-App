@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  SafeAreaView, 
   ScrollView, 
   TouchableOpacity, 
   Linking, 
@@ -13,9 +12,12 @@ import {
 
 import { Entypo } from '@expo/vector-icons';
 
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import colors from '../constants/colors';
 
-import { TextItem, TextSeparator } from '../components/TextItem'
+import { TextItem, TextSeparator } from '../components/TextItem';
+
 
 const screen = Dimensions.get('window');
 const openUrl = (url) => {
@@ -30,26 +32,38 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    width: screen.width * 0.4,
-    height: screen.height * 0.25,
+    width: screen.width * 0.2,
+    height: screen.height * 0.2,
     justifyContent: "center",
     alignItems: "center",
   },
   imageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-  }
+    width: screen.width * 1,
+    height: screen.height * 0.5
+  },
+  header: {
+    alignItems: 'flex-end',
+    marginHorizontal: 20,
+  },
 });
 
-export default () => {
+export default ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <StatusBar barStyle="dark-content" />
 
-        <TextItem 
-          text="Home"
-        />
+        <SafeAreaView style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.push('Comousar')}>
+            <Entypo name="cog" size={32} color={colors.red} />
+          </TouchableOpacity>
+        </SafeAreaView>
+        
+        <TouchableOpacity onPress={() => navigation.push('Ato1')}>
+          <TextItem text="Home" />
+        </TouchableOpacity>
 
         <TextSeparator />
 
@@ -57,13 +71,16 @@ export default () => {
           text="Olá, tá bem?"
         />
 
-        <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <Entypo name="aircraft" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 10}} />
+        <TouchableOpacity onPress={() => navigation.push('Ato1')}>
+          <Entypo name="aircraft" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 50}} />
         </TouchableOpacity>
 
         <View style={styles.imageContainer}>
-          <Image source={require('../assets/images/planta-cor.png')} style={styles.image} resizeMode="contain" />
-          <Image source={require('../assets/images/baloes-cor.png')} style={styles.image} resizeMode="contain" />
+          <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
+            <Image source={require('../assets/images/planta-cor.png')} resizeMode="contain" style={styles.image} />
+          </TouchableOpacity>
+
+          <Image source={require('../assets/images/baloes-cor.png')} resizeMode="contain" style={styles.image} />
         </View>
 
       </ScrollView>
