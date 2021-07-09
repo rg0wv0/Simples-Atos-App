@@ -6,7 +6,9 @@ import {
   Linking, 
   Alert, 
   StyleSheet, 
-  StatusBar } from 'react-native';
+  StatusBar,
+  View,
+  Image } from 'react-native';
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -22,9 +24,21 @@ const openUrl = (url) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: colors.white,
+    flex: 1,
   },
+  image: {
+    width: 100,
+    height: 150,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+  }
 });
 
 export default () => {
@@ -44,8 +58,13 @@ export default () => {
         />
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <Entypo name="aircraft" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 100}} />
+          <Entypo name="aircraft" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 10}} />
         </TouchableOpacity>
+
+        <View style={styles.imageContainer}>
+          <Image source={require('../assets/images/planta-cor.png')} style={styles.image} />
+          <Image source={require('../assets/images/baloes-cor.png')} style={styles.image} />
+        </View>
 
       </ScrollView>
     </SafeAreaView>
