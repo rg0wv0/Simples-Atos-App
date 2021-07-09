@@ -1,3 +1,4 @@
+// please add comments so its crisp and clear 
 /* 'use strict';
 
 var React = require('react-native');
