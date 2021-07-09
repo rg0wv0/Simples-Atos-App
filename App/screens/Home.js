@@ -1,5 +1,12 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, TouchableOpacity, Linking, Alert } from 'react-native';
+import { 
+  SafeAreaView, 
+  ScrollView, 
+  TouchableOpacity, 
+  Linking, 
+  Alert, 
+  StyleSheet, 
+  StatusBar } from 'react-native';
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -13,16 +20,21 @@ const openUrl = (url) => {
 });
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.yellow,
+  },
+});
+
 export default () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
+        <StatusBar barStyle="dark-content" />
 
         <TextItem 
           text="Home"
-          rightIcon={
-            <Entypo name="plane" size={20} color={colors.red} />
-          }
         />
 
         <TextSeparator />
@@ -32,7 +44,7 @@ export default () => {
         />
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <Entypo name="plane" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 100}} />
+          <Entypo name="aircraft" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 100}} />
         </TouchableOpacity>
 
       </ScrollView>

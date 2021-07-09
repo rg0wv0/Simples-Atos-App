@@ -1,5 +1,11 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, TouchableOpacity, Linking, Alert } from 'react-native';
+import { 
+  SafeAreaView, 
+  ScrollView, 
+  TouchableOpacity, 
+  Linking, 
+  Alert,
+  StatusBar } from 'react-native';
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -17,12 +23,10 @@ export default () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
+        <StatusBar barStyle="dark-content" />
 
         <TextItem 
           text="Como Usar"
-          rightIcon={
-            <Entypo name="heart" size={20} color={colors.red} />
-          }
         />
 
         <TextSeparator />

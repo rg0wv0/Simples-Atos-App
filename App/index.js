@@ -1,4 +1,4 @@
 import React from 'react';
-import Comousar from './screens/Comousar';
+import Home from './screens/Home';
 
-export default () => <Comousar />;
+export default () => <Home />;
