@@ -68,7 +68,7 @@ export default ({ navigation }) => {
         <TextSeparator />
 
         <TextItem 
-          text="Olá, tá bem?"
+          text="Olá, que tal?"
         />
 
         <TouchableOpacity onPress={() => navigation.push('Ato1')}>

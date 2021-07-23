@@ -30,7 +30,7 @@ export default ({ navigation }) => {
         <TextSeparator />
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <TextItem text="Olá, tudo bem?" />
+          <TextItem text="Olá, tudo bom?" />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.push('Ato1')}>
