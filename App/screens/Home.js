@@ -6,11 +6,8 @@ import {
   Alert, 
   StyleSheet, 
   StatusBar,
-  View,
   Dimensions,
   Image } from 'react-native';
-
-import { Entypo } from '@expo/vector-icons';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -32,20 +29,22 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    width: screen.width * 0.2,
-    height: screen.height * 0.2,
-    justifyContent: "center",
-    alignItems: "center",
+    paddingTop: 300,
+    width: screen.width * 0.75,
+    height: screen.height * 0.25,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     width: screen.width * 1,
-    height: screen.height * 0.5
+    height: screen.height * 0.3
   },
   header: {
-    alignItems: 'flex-end',
+    alignItems: 'center',
     marginHorizontal: 20,
+    marginTop: 50,
   },
 });
 
@@ -53,35 +52,43 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
-        <SafeAreaView style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.push('Comousar')}>
-            <Entypo name="cog" size={32} color={colors.red} />
-          </TouchableOpacity>
-        </SafeAreaView>
-        
-        <TouchableOpacity onPress={() => navigation.push('Ato1')}>
-          <TextItem text="Home" />
+        <TouchableOpacity 
+          style={styles.imageContainer}
+          onPress={() => openUrl('https://en.wikipedia.org/wiki/Ren_(Confucianism)')}
+        > 
+          <Image 
+            source={require('../assets/images/Simples-Atos.png')} 
+            style={styles.image} 
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => navigation.push('Comousar')} 
+          style={styles.header}
+        >
+          <TextItem text="Como Usar?" />
         </TouchableOpacity>
 
         <TextSeparator />
 
-        <TextItem 
-          text="Olá, que tal?"
-        />
-
-        <TouchableOpacity onPress={() => navigation.push('Ato1')}>
-          <Entypo name="aircraft" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 50}} />
+        <TouchableOpacity 
+          style={styles.header}
+          onPress={() => navigation.push('Listaatos')}
+        >
+          <TextItem text="Lista de Atos" />
         </TouchableOpacity>
 
-        <View style={styles.imageContainer}>
-          <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-            <Image source={require('../assets/images/planta-cor.png')} resizeMode="contain" style={styles.image} />
-          </TouchableOpacity>
+        <TextSeparator />
 
-          <Image source={require('../assets/images/baloes-cor.png')} resizeMode="contain" style={styles.image} />
-        </View>
+        <TouchableOpacity 
+          style={styles.header}
+          onPress={() => navigation.push('Ato1')}
+        >
+          <TextItem text="Ato Aleatório" />
+        </TouchableOpacity>
 
       </ScrollView>
     </SafeAreaView>

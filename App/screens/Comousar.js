@@ -23,7 +23,7 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
         <TextItem text="Como Usar" />
 
