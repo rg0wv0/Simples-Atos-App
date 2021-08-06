@@ -69,7 +69,7 @@ export default ({ navigation }) => {
           onPress={() => navigation.push('Comousar')} 
           style={styles.header}
         >
-          <TextItem text="Como Usar?" />
+          <TextItem text="Como usar?" />
         </TouchableOpacity>
 
         <TextSeparator />
