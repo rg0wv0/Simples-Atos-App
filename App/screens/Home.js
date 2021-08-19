@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
   },
   image: {
     paddingTop: 300,
-    width: screen.width * 0.75,
-    height: screen.height * 0.25,
+    width: screen.width * 0.45,
+    height: screen.height * 0.15,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -46,6 +46,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 50,
   },
+  textStyleOne: {
+    fontWeight: 'bold',
+  }
 });
 
 export default ({ navigation }) => {
@@ -59,7 +62,7 @@ export default ({ navigation }) => {
           onPress={() => openUrl('https://en.wikipedia.org/wiki/Ren_(Confucianism)')}
         > 
           <Image 
-            source={require('../assets/images/Simples-Atos.png')} 
+            source={require('../assets/images/g21600.png')} 
             style={styles.image} 
             resizeMode="contain"
           />
@@ -67,9 +70,9 @@ export default ({ navigation }) => {
 
         <TouchableOpacity 
           onPress={() => navigation.push('Comousar')} 
-          style={styles.header}
+          style={styles.textStyleOne}
         >
-          <TextItem text="Como usar?" />
+          <TextItem text="Como usar?" style={styles.textStyleOne} />
         </TouchableOpacity>
 
         <TextSeparator />
@@ -78,7 +81,7 @@ export default ({ navigation }) => {
           style={styles.header}
           onPress={() => navigation.push('Listaatos')}
         >
-          <TextItem text="Lista de Atos" />
+          <TextItem text="Lista dos Atos" />
         </TouchableOpacity>
 
         <TextSeparator />
