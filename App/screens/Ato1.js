@@ -5,7 +5,10 @@ import {
   TouchableOpacity, 
   Linking, 
   Alert,
-  StatusBar } from 'react-native';
+  StatusBar,
+  Dimensions,
+  StyleSheet,
+} from 'react-native';
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -13,17 +16,37 @@ import colors from '../constants/colors';
 
 import { TextItem } from '../components/TextItem'
 
+const screen = Dimensions.get('window');
+
 const openUrl = (url) => {
   return Linking.openURL(url).catch(() => {
   Alert.alert('Desculpe, algo deu errado.', 'Por favor tente de novo mais tarde.');
 });
 }
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.white,
+    flex: 1,
+  },
+  image: {
+    paddingTop: 300,
+    width: screen.width * 0.45,
+    height: screen.height * 0.15,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+});
+
 export default ({ navigation }) => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
+
+        <TouchableOpacity onPress={() => navigation.push('Home')}>
+          <Entypo name="home" size={50} color={colors.black} style={{marginLeft: 165, paddingTop: 5}} />
+        </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.push('Home')}>
           <TextItem text="Como Usar" />
@@ -31,10 +54,6 @@ export default ({ navigation }) => {
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
           <TextItem text="Olá, tudo bom?" />
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.push('Ato1')}>
-          <Entypo name="heart" size={50} color={colors.red} style={{marginLeft: 165, paddingTop: 100}} />
         </TouchableOpacity>
 
       </ScrollView>
