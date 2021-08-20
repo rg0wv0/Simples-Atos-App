@@ -56,7 +56,7 @@ export default ({ navigation }) => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.textStyleOne} onPress={() => navigation.push('Home')}>
-          <TextItem style={styles.textStyleOne} text="Como Usar" />
+          <TextItem style={styles.textStyleOne} text="Lista de Atos" />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
