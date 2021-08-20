@@ -25,12 +25,14 @@ const MainStackScreen = () => (
 
     <MainStack.Screen 
       name="Ato1" 
-      component={Ato1} 
+      component={Ato1}
+      options={{ headerShown: false }}  
     />
 
     <MainStack.Screen 
       name="Listaatos" 
-      component={Listaatos} 
+      component={Listaatos}
+      options={{ headerShown: false }} 
     />
 
   </MainStack.Navigator>
