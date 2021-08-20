@@ -45,8 +45,12 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    marginHorizontal: 20,
+    marginHorizontal: 50,
     marginTop: 70,
+    borderColor: colors.black,
+    borderWidth: 3,
+    backgroundColor: colors.white,
+    borderRadius: 5,
   },
   textStyleOne: {
     alignItems: 'center',

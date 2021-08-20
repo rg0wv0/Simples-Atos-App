@@ -3,5 +3,6 @@ export default {
   border: "#E2E2E2",
   red: "#FF0000",
   yellow: "#FFFF00",
-  white: "#FFFFFF"
+  white: "#FFFFFF",
+  black: "#000000"
 }
