@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    paddingTop: 300,
-    width: screen.width * 0.45,
-    height: screen.height * 0.15,
+    marginTop: 100,
+    width: screen.width * 0.65,
+    height: screen.height * 0.55,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     marginHorizontal: 50,
-    marginTop: 70,
+    marginTop: 60,
     borderColor: colors.black,
     borderWidth: 3,
     backgroundColor: colors.white,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   textStyleOne: {
     alignItems: 'center',
     marginHorizontal: 20,
-    marginTop: 20,
+    marginTop: 100,
   }
 });
 
@@ -69,10 +69,10 @@ export default ({ navigation }) => {
           style={styles.imageContainer}
           onPress={() => openUrl('https://en.wikipedia.org/wiki/Ren_(Confucianism)')}
         > 
-          <Image 
+          <Image
+            resizeMode='contain'
             source={require('../assets/images/g21600.png')} 
             style={styles.image} 
-            resizeMode="contain"
           />
         </TouchableOpacity>
 
