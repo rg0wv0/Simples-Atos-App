@@ -87,7 +87,7 @@ export default ({ navigation }) => {
           style={styles.header}
           onPress={() => navigation.push('Listaatos')}
         >
-          <TextItem text="Lista dos Atos" />
+          <TextItem text="Lista de Atos" />
         </TouchableOpacity>
 
         <TouchableOpacity 
