@@ -5,13 +5,13 @@ import colors from '../constants/colors';
 
 const styles = StyleSheet.create({
   text: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 35,
     paddingVertical: 4,
     fontSize: 21,
     color: colors.text,
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
+    textAlign: "justify"
   },
   separator: {
     backgroundColor: colors.border,

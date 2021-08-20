@@ -3,11 +3,10 @@ import {
   SafeAreaView, 
   ScrollView, 
   TouchableOpacity, 
-  Linking, 
-  Alert,
   StatusBar,
   Dimensions,
   StyleSheet,
+  Text
  } from 'react-native';
 
 import { Entypo } from '@expo/vector-icons';
@@ -16,15 +15,7 @@ import colors from '../constants/colors';
 
 import { TextItem } from '../components/TextItem';
 
-import { TextItemThree } from '../components/TextItemThree';
-
 const screen = Dimensions.get('window');
-
-const openUrl = (url) => {
-  return Linking.openURL(url).catch(() => {
-  Alert.alert('Desculpe, algo deu errado.', 'Por favor tente de novo mais tarde.');
-});
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -42,6 +33,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     marginTop: 15,
+  },
+  textStyleThree: {
+    paddingHorizontal: 35,
+    paddingVertical: 4,
+    fontSize: 21,
+    color: colors.text,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    textAlign: "justify",
+    marginBottom: 15,
   }
 });
 
@@ -59,11 +60,21 @@ export default ({ navigation }) => {
           <TextItem style={styles.textStyleOne} text="Como Usar" />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <TextItemThree 
-            text="O propósito deste aplicativo é poder bla bla bla bla bla bla" 
-          />
-        </TouchableOpacity>
+        <Text style={styles.textStyleThree}> 
+          O propósito deste aplicativo é sempre poder 
+          bla bla bla bla bla bla e bla bla bla bla bla bla bl 
+          e bla bla bla bla e bla bla bla
+          e quando eu bla bla bla
+          tb posso bla
+        </Text>
+
+        <Text style={styles.textStyleThree}> 
+          Uhum ósito deste aplicativo é sempre poder 
+          bla bla bla bla bla bla e bla bla bla bla bla bla bl 
+          e bla bla bla bla e bla bla bla
+          e quando eu bla bla bla
+          tb posso bla
+        </Text>
 
       </ScrollView>
     </SafeAreaView>
