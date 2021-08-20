@@ -6,8 +6,8 @@ import colors from '../constants/colors';
 const styles = StyleSheet.create({
   text: {
     paddingHorizontal: 20,
-    paddingVertical: 16,
-    fontSize: 28,
+    paddingVertical: 4,
+    fontSize: 21,
     color: colors.text,
     flexDirection: "row",
     alignItems: "center",
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export const TextItem = ({ text }) => {
+export const TextItemTwo = ({ text }) => {
   return (
     <Text style={styles.text}>
       {text}

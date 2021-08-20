@@ -13,7 +13,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import colors from '../constants/colors';
 
-import { TextItem, TextSeparator } from '../components/TextItem';
+import { TextItem } from '../components/TextItem';
+
+import { TextItemTwo } from '../components/TextItemTwo';
 
 
 const screen = Dimensions.get('window');
@@ -44,10 +46,12 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     marginHorizontal: 20,
-    marginTop: 50,
+    marginTop: 70,
   },
   textStyleOne: {
-    fontWeight: 'bold',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    marginTop: 20,
   }
 });
 
@@ -72,19 +76,15 @@ export default ({ navigation }) => {
           onPress={() => navigation.push('Comousar')} 
           style={styles.textStyleOne}
         >
-          <TextItem text="Como usar?" style={styles.textStyleOne} />
+          <TextItemTwo style={styles.textStyleOne} text="Como usar?" />
         </TouchableOpacity>
-
-        <TextSeparator />
 
         <TouchableOpacity 
           style={styles.header}
           onPress={() => navigation.push('Listaatos')}
         >
-          <TextItem text="Lista dos Atos" />
+          <TextItem text="Lista de Atos" />
         </TouchableOpacity>
-
-        <TextSeparator />
 
         <TouchableOpacity 
           style={styles.header}
