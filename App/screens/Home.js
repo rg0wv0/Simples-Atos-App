@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     marginHorizontal: 50,
-    marginTop: 60,
+    marginTop: 50,
     borderColor: colors.black,
     borderWidth: 3,
     backgroundColor: colors.white,
@@ -63,6 +63,7 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
         <TouchableOpacity 

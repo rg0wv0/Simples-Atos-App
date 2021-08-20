@@ -50,6 +50,7 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+        
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
         <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
@@ -57,25 +58,35 @@ export default ({ navigation }) => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.textStyleOne} onPress={() => navigation.push('Home')}>
-          <TextItem style={styles.textStyleOne} text="Como Usar" />
+          <TextItem style={styles.textStyleOne} text="Como Usar?" />
         </TouchableOpacity>
 
         <Text style={styles.textStyleThree}> 
-          O propósito deste aplicativo é sempre poder 
-          bla bla bla bla bla bla e bla bla bla bla bla bla bl 
-          e bla bla bla bla e bla bla bla
-          e quando eu bla bla bla
-          tb posso bla
+          O propósito deste aplicativo é oferecer um conjunto
+          de atos que, quando realizados, possam trazer
+          certas experiências não tão comuns a cada pessoa.
         </Text>
 
         <Text style={styles.textStyleThree}> 
-          Uhum ósito deste aplicativo é sempre poder 
-          bla bla bla bla bla bla e bla bla bla bla bla bla bl 
-          e bla bla bla bla e bla bla bla
-          e quando eu bla bla bla
-          tb posso bla
+          Sendo assim, recomendamos que você visualize a Lista de Atos
+          e escolha realizar os que mais te interessem. 
         </Text>
 
+        <Text style={styles.textStyleThree}> 
+          Se preferir, você também pode clicar no botão Ato Aleatório
+          para receber um ato sem precisar escolher na lista. 
+        </Text>
+
+        <Text style={styles.textStyleThree}> 
+          Esperamos que estes atos possam te tirar um pouco da rotina e
+          do automático, e te trazer novas aventuras e memórias. 
+        </Text>
+
+        <Text style={styles.textStyleThree}> 
+          Esperamos que estes atos possam te tirar um pouco da rotina e
+          do automático, e te trazer novas aventuras e memórias. 
+        </Text>
+     
       </ScrollView>
     </SafeAreaView>
   );
