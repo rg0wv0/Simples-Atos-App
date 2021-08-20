@@ -16,6 +16,8 @@ import colors from '../constants/colors';
 
 import { TextItem } from '../components/TextItem'
 
+import { TextItemThree } from '../components/TextItemThree'
+
 const screen = Dimensions.get('window');
 
 const openUrl = (url) => {
@@ -35,6 +37,11 @@ const styles = StyleSheet.create({
     height: screen.height * 0.15,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  textStyleOne: {
+    alignItems: 'center',
+    marginHorizontal: 20,
+    marginTop: 15,
   }
 });
 
@@ -44,16 +51,18 @@ export default ({ navigation }) => {
       <ScrollView>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
-        <TouchableOpacity onPress={() => navigation.push('Home')}>
-          <Entypo name="home" size={50} color={colors.black} style={{marginLeft: 165, paddingTop: 5}} />
+        <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
+          <Entypo name="home" size={50} color={colors.black} style={{paddingTop: 5}} />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.push('Home')}>
-          <TextItem text="Como Usar" />
+        <TouchableOpacity style={styles.textStyleOne} onPress={() => navigation.push('Home')}>
+          <TextItem style={styles.textStyleOne} text="Como Usar" />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <TextItem text="Olá, tudo bom?" />
+          <TextItemThree 
+            text="O propósito deste aplicativo é poder bla bla bla bla bla bla" 
+          />
         </TouchableOpacity>
 
       </ScrollView>
