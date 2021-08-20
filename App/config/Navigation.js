@@ -19,7 +19,8 @@ const MainStackScreen = () => (
 
     <MainStack.Screen 
       name="Comousar" 
-      component={Comousar} 
+      component={Comousar}
+      options={{ headerShown: false }} 
     />
 
     <MainStack.Screen 

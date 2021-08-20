@@ -11,7 +11,7 @@ import { Entypo } from '@expo/vector-icons';
 
 import colors from '../constants/colors';
 
-import { TextItem, TextSeparator } from '../components/TextItem'
+import { TextItem } from '../components/TextItem'
 
 const openUrl = (url) => {
   return Linking.openURL(url).catch(() => {
@@ -25,9 +25,9 @@ export default ({ navigation }) => {
       <ScrollView>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
-        <TextItem text="Como Usar" />
-
-        <TextSeparator />
+        <TouchableOpacity onPress={() => navigation.push('Home')}>
+          <TextItem text="Como Usar" />
+        </TouchableOpacity>
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
           <TextItem text="Olá, tudo bom?" />
