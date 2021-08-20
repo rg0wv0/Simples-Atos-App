@@ -43,6 +43,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     textAlign: "justify",
     marginBottom: 15,
+  },
+  textStyleFour: {
+    paddingHorizontal: 35,
+    paddingVertical: 4,
+    fontSize: 21,
+    color: colors.text,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    textAlign: "justify",
+    marginBottom: 40,
   }
 });
 
@@ -50,7 +60,7 @@ export default ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        
+
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
         <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
@@ -63,8 +73,8 @@ export default ({ navigation }) => {
 
         <Text style={styles.textStyleThree}> 
           O propósito deste aplicativo é oferecer um conjunto
-          de atos que, quando realizados, possam trazer
-          certas experiências não tão comuns a cada pessoa.
+          de simples atos que, quando realizados, possam trazer
+          certas experiências não tão comuns no cotidiano de cada pessoa.
         </Text>
 
         <Text style={styles.textStyleThree}> 
@@ -73,20 +83,20 @@ export default ({ navigation }) => {
         </Text>
 
         <Text style={styles.textStyleThree}> 
-          Se preferir, você também pode clicar no botão Ato Aleatório
-          para receber um ato sem precisar escolher na lista. 
+          Ou, se preferir, você também pode clicar no botão Ato Aleatório
+          para receber um ato surpresa. 
         </Text>
 
         <Text style={styles.textStyleThree}> 
-          Esperamos que estes atos possam te tirar um pouco da rotina e
-          do automático, e te trazer novas aventuras e memórias. 
+          Cada ano que passar, vamos criar uma nova lista com novos atos
+          para que cada novo ano seja repleto de novas oportunidades.
         </Text>
 
-        <Text style={styles.textStyleThree}> 
-          Esperamos que estes atos possam te tirar um pouco da rotina e
-          do automático, e te trazer novas aventuras e memórias. 
+        <Text style={styles.textStyleFour}>
+          Esperamos que estes simples atos possam te tirar um pouco da rotina e
+          do automático, e te trazer novas aventuras e memórias! 
         </Text>
-     
+    
       </ScrollView>
     </SafeAreaView>
   );
