@@ -44,14 +44,9 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   textStyleThree: {
-    paddingHorizontal: 35,
-    paddingVertical: 4,
     fontSize: 21,
     color: colors.text,
     flexDirection: "row",
-    justifyContent: "space-around",
-    textAlign: "justify",
-    marginBottom: 15,
   },
   checkBoxStyle: {
     backgroundColor: colors.white,
@@ -62,6 +57,7 @@ export default ({ navigation }) => {
 
   const [isSelected, setSelected] = useState(false)
   const [isSelectedTwo, setSelectedTwo] = useState(false)
+  const [isSelectedThree, setSelectedThree] = useState(false)
 
   return (
     <SafeAreaView style={styles.container}>
@@ -78,35 +74,67 @@ export default ({ navigation }) => {
         </TouchableOpacity>
 
         <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+
           <CheckBox
             checkedIcon="check"
             uncheckedIcon="square-o"
-            checkedColor="green"
+            checkedColor="purple"
             uncheckedColor="black"
             checked={isSelected}
             onPress={() => setSelected(!isSelected)}
             size={48}
           />
-          <Text onPress={() => navigation.push('Home')}>Ato 1 - Lalala</Text>
+
+          <Text 
+            style={styles.textStyleThree} 
+            onPress={() => navigation.push('Home')}
+          >
+            Ato 1 - Lalala
+          </Text>
+
         </TouchableOpacity>
 
         <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+
           <CheckBox
             checkedIcon="check"
             uncheckedIcon="square-o"
-            checkedColor="green"
+            checkedColor="purple"
             uncheckedColor="black"
             checked={isSelectedTwo}
             onPress={() => setSelectedTwo(!isSelectedTwo)}
             size={48}
           />
-          <Text onPress={() => navigation.push('Home')}>Ato 1 - Lalala</Text>
+
+          <Text 
+            style={styles.textStyleThree} 
+            onPress={() => navigation.push('Home')}
+          >
+            Ato 2 - Lalala
+          </Text>
+
         </TouchableOpacity>
 
-        <Text style={styles.textStyleThree}> 
-          Sendo assim, recomendamos que você visualize a Lista de Atos
-          e escolha realizar os que mais te interessem. 
-        </Text>
+        <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+
+          <CheckBox
+            checkedIcon="check"
+            uncheckedIcon="square-o"
+            checkedColor="purple"
+            uncheckedColor="black"
+            checked={isSelectedThree}
+            onPress={() => setSelectedThree(!isSelectedThree)}
+            size={48}
+          />
+
+          <Text 
+            style={styles.textStyleThree} 
+            onPress={() => navigation.push('Home')}
+          >
+            Ato 3 - Lalala
+          </Text>
+
+        </TouchableOpacity>
 
       </ScrollView>
     </SafeAreaView>
