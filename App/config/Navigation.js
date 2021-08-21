@@ -9,7 +9,7 @@ import Listaatos from '../screens/Listaatos';
 
 const MainStack = createStackNavigator();
 const MainStackScreen = () => (
-  <MainStack.Navigator initialRouteName="Listaatos">
+  <MainStack.Navigator initialRouteName="Home">
 
     <MainStack.Screen 
       name="Home" 

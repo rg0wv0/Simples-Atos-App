@@ -60,6 +60,9 @@ const styles = StyleSheet.create({
 });
 
 export default ({ navigation }) => {
+  
+  const atosArray = ['Comousar', 'Listaatos', 'Ato1']
+  
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -93,7 +96,7 @@ export default ({ navigation }) => {
 
         <TouchableOpacity 
           style={styles.header}
-          onPress={() => navigation.push('Ato1')}
+          onPress={() => navigation.push(atosArray[Math.floor(Math.random()*atosArray.length)])}
         >
           <TextItem text="Ato Aleatório" />
         </TouchableOpacity>
