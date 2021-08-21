@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // , { useState }
 import { 
   SafeAreaView, 
   ScrollView, 
@@ -9,6 +9,7 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
+// import { Checkbox } from 'react-native-elements'
 
 import { Entypo } from '@expo/vector-icons';
 
@@ -46,9 +47,13 @@ const styles = StyleSheet.create({
 });
 
 export default ({ navigation }) => {
+
+  // const [isSelected, setSelected] = useState(false)
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
+
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
         <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
@@ -64,6 +69,16 @@ export default ({ navigation }) => {
             text="O propósito deste aplicativo é poder bla bla bla bla bla bla" 
           />
         </TouchableOpacity>
+
+        {/* <Checkbox 
+          title="testando"
+          checkedIcon="check"
+          uncheckedIcon="square-o"
+          checkedColor="green"
+          uncheckedColor="red"
+          checked={isSelected}
+          onPress={() => setSelected(!isSelected)}
+        /> */}
 
       </ScrollView>
     </SafeAreaView>
