@@ -48,9 +48,6 @@ const styles = StyleSheet.create({
     color: colors.text,
     flexDirection: "row",
   },
-  checkBoxStyle: {
-    backgroundColor: colors.white,
-  }
 });
 
 export default ({ navigation }) => {
@@ -94,7 +91,6 @@ export default ({ navigation }) => {
             Ato 1 - Lalala
           </Text>
           
-
         </TouchableOpacity>
 
         <TouchableOpacity 
