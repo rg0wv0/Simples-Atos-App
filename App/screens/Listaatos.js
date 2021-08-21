@@ -1,4 +1,4 @@
-import React from 'react'; // , { useState }
+import React, { useState } from 'react';
 import { 
   SafeAreaView, 
   ScrollView, 
@@ -8,16 +8,15 @@ import {
   StatusBar,
   Dimensions,
   StyleSheet,
+  Text,
 } from 'react-native';
-// import { Checkbox } from 'react-native-elements'
+import { CheckBox } from 'react-native-elements'
 
 import { Entypo } from '@expo/vector-icons';
 
 import colors from '../constants/colors';
 
 import { TextItem } from '../components/TextItem';
-
-import { TextItemThree } from '../components/TextItemThree';
 
 const screen = Dimensions.get('window');
 
@@ -43,12 +42,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     marginTop: 15,
+  },
+  textStyleThree: {
+    paddingHorizontal: 35,
+    paddingVertical: 4,
+    fontSize: 21,
+    color: colors.text,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    textAlign: "justify",
+    marginBottom: 15,
+  },
+  checkBoxStyle: {
+    backgroundColor: colors.white,
   }
 });
 
 export default ({ navigation }) => {
 
-  // const [isSelected, setSelected] = useState(false)
+  const [isSelected, setSelected] = useState(false)
+  const [isSelectedTwo, setSelectedTwo] = useState(false)
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,25 +73,40 @@ export default ({ navigation }) => {
           <Entypo name="home" size={50} color={colors.black} style={{paddingTop: 5}} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.textStyleOne} onPress={() => navigation.push('Home')}>
+        <TouchableOpacity style={styles.textStyleOne} onPress={() => openUrl('https://www.kurytibametropole.org/')}>
           <TextItem style={styles.textStyleOne} text="Lista de Atos" />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <TextItemThree 
-            text="O propósito deste aplicativo é poder bla bla bla bla bla bla" 
+        <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+          <CheckBox
+            checkedIcon="check"
+            uncheckedIcon="square-o"
+            checkedColor="green"
+            uncheckedColor="black"
+            checked={isSelected}
+            onPress={() => setSelected(!isSelected)}
+            size={48}
           />
+          <Text onPress={() => navigation.push('Home')}>Ato 1 - Lalala</Text>
         </TouchableOpacity>
 
-        {/* <Checkbox 
-          title="testando"
-          checkedIcon="check"
-          uncheckedIcon="square-o"
-          checkedColor="green"
-          uncheckedColor="red"
-          checked={isSelected}
-          onPress={() => setSelected(!isSelected)}
-        /> */}
+        <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+          <CheckBox
+            checkedIcon="check"
+            uncheckedIcon="square-o"
+            checkedColor="green"
+            uncheckedColor="black"
+            checked={isSelectedTwo}
+            onPress={() => setSelectedTwo(!isSelectedTwo)}
+            size={48}
+          />
+          <Text onPress={() => navigation.push('Home')}>Ato 1 - Lalala</Text>
+        </TouchableOpacity>
+
+        <Text style={styles.textStyleThree}> 
+          Sendo assim, recomendamos que você visualize a Lista de Atos
+          e escolha realizar os que mais te interessem. 
+        </Text>
 
       </ScrollView>
     </SafeAreaView>
