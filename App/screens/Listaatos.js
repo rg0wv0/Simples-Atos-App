@@ -15,9 +15,9 @@ import { Entypo } from '@expo/vector-icons';
 
 import colors from '../constants/colors';
 
-import { TextItem } from '../components/TextItem'
+import { TextItem } from '../components/TextItem';
 
-import { TextItemThree } from '../components/TextItemThree'
+import { TextItemThree } from '../components/TextItemThree';
 
 const screen = Dimensions.get('window');
 
