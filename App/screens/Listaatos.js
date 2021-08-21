@@ -73,7 +73,10 @@ export default ({ navigation }) => {
           <TextItem style={styles.textStyleOne} text="Lista de Atos" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+        <TouchableOpacity 
+          style={{flexDirection:"row", alignItems:"center"}}
+          onPress={() => navigation.push('Home')}
+        >
 
           <CheckBox
             checkedIcon="check"
@@ -84,17 +87,20 @@ export default ({ navigation }) => {
             onPress={() => setSelected(!isSelected)}
             size={48}
           />
-
+          
           <Text 
             style={styles.textStyleThree} 
-            onPress={() => navigation.push('Home')}
           >
             Ato 1 - Lalala
           </Text>
+          
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+        <TouchableOpacity 
+          style={{flexDirection:"row", alignItems:"center"}}
+          onPress={() => navigation.push('Home')}
+        >
 
           <CheckBox
             checkedIcon="check"
@@ -107,15 +113,17 @@ export default ({ navigation }) => {
           />
 
           <Text 
-            style={styles.textStyleThree} 
-            onPress={() => navigation.push('Home')}
+            style={styles.textStyleThree}
           >
             Ato 2 - Lalala
           </Text>
 
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}}>
+        <TouchableOpacity 
+          style={{flexDirection:"row", alignItems:"center"}}
+          onPress={() => navigation.push('Home')}
+        >
 
           <CheckBox
             checkedIcon="check"
@@ -128,8 +136,7 @@ export default ({ navigation }) => {
           />
 
           <Text 
-            style={styles.textStyleThree} 
-            onPress={() => navigation.push('Home')}
+            style={styles.textStyleThree}
           >
             Ato 3 - Lalala
           </Text>
