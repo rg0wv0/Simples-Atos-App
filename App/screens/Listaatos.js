@@ -75,7 +75,7 @@ export default ({ navigation }) => {
           onPress={() => navigation.push('Home')}
         >
 
-          <CheckBox
+          <CheckBox 
             checkedIcon="check"
             uncheckedIcon="square-o"
             checkedColor="purple"
@@ -98,7 +98,7 @@ export default ({ navigation }) => {
           onPress={() => navigation.push('Home')}
         >
 
-          <CheckBox
+          <CheckBox 
             checkedIcon="check"
             uncheckedIcon="square-o"
             checkedColor="purple"
@@ -121,7 +121,7 @@ export default ({ navigation }) => {
           onPress={() => navigation.push('Home')}
         >
 
-          <CheckBox
+          <CheckBox 
             checkedIcon="check"
             uncheckedIcon="square-o"
             checkedColor="purple"
