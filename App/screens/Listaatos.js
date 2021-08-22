@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
 export default ({navigation}) => {
 
-  const [isSelected, setSelected] = useState(false)
+  const [isSelected, setSelected] = useState(true)
   const [isSelectedTwo, setSelectedTwo] = useState(false)
   const [isSelectedThree, setSelectedThree] = useState(false)
 
@@ -80,7 +80,7 @@ export default ({navigation}) => {
             checkedColor="purple"
             uncheckedColor="black"
             checked={isSelected}
-            onPress={() => setSelected(!isSelectedTwo)}
+            onPress={() => setSelected(!isSelected)}
             size={48}
           />
           
