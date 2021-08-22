@@ -10,10 +10,9 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+
 import { CheckBox } from 'react-native-elements'
-
 import { Entypo } from '@expo/vector-icons';
-
 import colors from '../constants/colors';
 
 import { TextItem } from '../components/TextItem';
@@ -50,9 +49,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ({ navigation }) => {
+export default ({navigation}) => {
 
-  const [isSelected, setSelected] = useState(true)
+  const [isSelected, setSelected] = useState(false)
   const [isSelectedTwo, setSelectedTwo] = useState(false)
   const [isSelectedThree, setSelectedThree] = useState(false)
 
@@ -81,7 +80,7 @@ export default ({ navigation }) => {
             checkedColor="purple"
             uncheckedColor="black"
             checked={isSelected}
-            onPress={() => setSelected(!isSelected)}
+            onPress={() => setSelected(!isSelectedTwo)}
             size={48}
           />
           
@@ -142,4 +141,17 @@ export default ({ navigation }) => {
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
+
+
+/*          
+<CheckBox 
+checkedIcon="check"
+uncheckedIcon="square-o"
+checkedColor="purple"
+uncheckedColor="black"
+checked={isSelected}
+onPress={() => setSelected(!isSelected)}
+size={48}
+/>
+*/
