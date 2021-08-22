@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 
 export default ({ navigation }) => {
 
-  const [isSelected, setSelected] = useState(false)
+  const [isSelected, setSelected] = useState(true)
   const [isSelectedTwo, setSelectedTwo] = useState(false)
   const [isSelectedThree, setSelectedThree] = useState(false)
 
