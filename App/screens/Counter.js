@@ -2,6 +2,8 @@ import React, { useContext, createContext, useState, useEffect } from 'react';
 import { View, Button, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { CheckBox } from 'react-native-elements'
+
 import { Entypo } from '@expo/vector-icons';
 
 const CounterContext = createContext(0);
@@ -10,6 +12,7 @@ const useCounter = () => useContext(CounterContext);
 
 const CounterContextProvider = ({ children }) => {
   const [count, setCount] = useState(0);
+  const [isSelected, setSelected] = useState(true)
 
   const increment = () => setCount((c) => c + 1);
   const decrement = () => setCount((c) => c - 1);
@@ -29,14 +32,14 @@ const CounterContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <CounterContext.Provider value={{ count, increment, decrement }}>
+    <CounterContext.Provider value={{ count, increment, decrement, isSelected, setSelected }}>
       {children}
     </CounterContext.Provider>
   );
 };
 
 const App = () => {
-  const { count, increment, decrement } = useCounter();
+  const { count, increment, decrement, isSelected, setSelected } = useCounter();
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -44,6 +47,17 @@ const App = () => {
       <Text>{count}</Text>
       <Button title="Increment" onPress={() => increment()} />
       <Button title="Decrement" onPress={() => decrement()} />
+
+      <CheckBox 
+        checkedIcon="check"
+        uncheckedIcon="square-o"
+        checkedColor="purple"
+        uncheckedColor="black"
+        checked={isSelected}
+        onPress={() => setSelected(!isSelected)}
+        size={48}
+      />
+
     </View>
   );
 };

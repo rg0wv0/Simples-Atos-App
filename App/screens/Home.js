@@ -52,6 +52,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 5,
   },
+  footer: {
+    alignItems: 'center',
+    marginHorizontal: 50,
+    marginTop: 50,
+    marginBottom:100,
+    borderColor: colors.black,
+    borderWidth: 3,
+    backgroundColor: colors.white,
+    borderRadius: 5,
+  },
   textStyleOne: {
     alignItems: 'center',
     marginHorizontal: 20,
@@ -102,7 +112,7 @@ export default ({ navigation }) => {
         </TouchableOpacity>
 
         <TouchableOpacity 
-          style={styles.header}
+          style={styles.footer}
           onPress={() => navigation.push('Counter')}
         >
           <TextItem text="Counter" />
