@@ -101,6 +101,13 @@ export default ({ navigation }) => {
           <TextItem text="Ato Aleatório" />
         </TouchableOpacity>
 
+        <TouchableOpacity 
+          style={styles.header}
+          onPress={() => navigation.push('Counter')}
+        >
+          <TextItem text="Counter" />
+        </TouchableOpacity>
+
       </ScrollView>
     </SafeAreaView>
   );
