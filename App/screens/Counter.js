@@ -38,6 +38,7 @@ const CounterContextProvider = ({ children }) => {
 /*
 const CheckboxContext = createCheckboxContext(true);
 const useCheckbox = () => useCheckboxContext(CheckboxContext);
+
 const CheckboxContextProvider = ({ children }) => {
   const [count, setCount] = useState(0);
 
