@@ -38,7 +38,7 @@ const CounterContextProvider = ({ children }) => {
 
 const App = () => {
   const { count, increment, decrement } = useCounter();
-  const [isSelected, setSelected] = useState(true)
+  const [isSelected, setSelected] = useState()
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
