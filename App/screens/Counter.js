@@ -2,6 +2,7 @@ import React, { useContext, createContext, useState, useEffect } from 'react';
 import { View, Button, Text, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { CheckBox } from 'react-native-elements'
 import { Entypo } from '@expo/vector-icons';
 
 const CounterContext = createContext(0);
@@ -37,10 +38,20 @@ const CounterContextProvider = ({ children }) => {
 
 const App = () => {
   const { count, increment, decrement } = useCounter();
+  const [isSelected, setSelected] = useState(true)
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>{count}</Text>
+      <CheckBox 
+        checkedIcon="check"
+        uncheckedIcon="square-o"
+        checkedColor="purple"
+        uncheckedColor="black"
+        checked={isSelected}
+        onPress={() => setSelected(!isSelected)}
+        size={48}
+      />
       <Button title="Increment" onPress={() => increment()} />
       <Button title="Decrement" onPress={() => decrement()} />
     </View>
