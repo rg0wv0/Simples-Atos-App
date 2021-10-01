@@ -6,7 +6,6 @@ import { CheckBox } from 'react-native-elements'
 import { Entypo } from '@expo/vector-icons';
 
 const CounterContext = createContext(0);
-
 const useCounter = () => useContext(CounterContext);
 
 const CounterContextProvider = ({ children }) => {
@@ -35,6 +34,34 @@ const CounterContextProvider = ({ children }) => {
     </CounterContext.Provider>
   );
 };
+
+/*
+const CheckboxContext = createCheckboxContext(true);
+const useCheckbox = () => useCheckboxContext(CheckboxContext);
+const CheckboxContextProvider = ({ children }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (isSelected !== 0) {
+      AsyncStorage.setItem('DEMO_APP::COUNT_VALUE', `${count}`)
+    }
+  }, [count]);
+
+  useEffect(() => {
+    AsyncStorage.getItem('DEMO_APP::COUNT_VALUE').then((value) => {
+      if (value) {
+        setCount(parseInt(value, 10));
+      }
+    });
+  }, []);
+
+  return (
+    <CheckboxContext.Provider value={{ isSelected, setSelected }}>
+      {children}
+    </CheckboxContext.Provider>
+  );
+};
+*/
 
 const App = () => {
   const { count, increment, decrement } = useCounter();
