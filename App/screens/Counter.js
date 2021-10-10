@@ -11,7 +11,7 @@ const useCounter = () => useContext(CounterContext);
 const CounterContextProvider = ({ children }) => {
   const [count, setCount] = useState(0);
 
-  const increment = () => setCount((c) => c + 1);
+  const increment = () => setCount((c) => c + 2);
   const decrement = () => setCount((c) => c - 1);
 
   useEffect(() => {
