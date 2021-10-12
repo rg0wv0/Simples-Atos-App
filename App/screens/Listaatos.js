@@ -8,18 +8,13 @@ import {
   Image,
 } from 'react-native';
 
-
 import { useSelector, useDispatch } from 'react-redux';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { getBooks, addBookmark, removeBookmark } from '../redux/actions';
 
-
-
-
-
-export default ( /* {navigation} */ ) => {
+export default ( {navigation} ) => {
   const { books, bookmarks } = useSelector(state => state.booksReducer);
   const dispatch = useDispatch();
 
@@ -127,8 +122,15 @@ export default ( /* {navigation} */ ) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#1E1B26' }}>
+
       <View style={{ flex: 1, paddingHorizontal: 16 }}>
+
+        <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
+          <MaterialCommunityIcons name="home" size={50} color='white' style={{paddingTop: 5}} />
+        </TouchableOpacity>
+
         <Text style={{ color: 'white', fontSize: 22 }}>Bestsellers</Text>
+
         <View style={{ flex: 1, marginTop: 8 }}>
           <FlatList
             data={books}
@@ -137,7 +139,9 @@ export default ( /* {navigation} */ ) => {
             showsVerticalScrollIndicator={false}
           />
         </View>
+
       </View>
+
     </SafeAreaView>
   );
 }
