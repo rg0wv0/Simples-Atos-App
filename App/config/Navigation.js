@@ -6,11 +6,10 @@ import Home from '../screens/Home';
 import Comousar from '../screens/Comousar';
 import Ato1 from '../screens/Ato1';
 import Listaatos from '../screens/Listaatos';
-import Counter from '../screens/Counter';
 
 const MainStack = createStackNavigator();
 const MainStackScreen = () => (
-  <MainStack.Navigator initialRouteName="Counter">
+  <MainStack.Navigator initialRouteName="Home">
 
     <MainStack.Screen 
       name="Home" 
@@ -33,12 +32,6 @@ const MainStackScreen = () => (
     <MainStack.Screen 
       name="Listaatos" 
       component={Listaatos}
-      options={{ headerShown: false }} 
-    />
-
-    <MainStack.Screen 
-      name="Counter" 
-      component={Counter}
       options={{ headerShown: false }} 
     />
 
