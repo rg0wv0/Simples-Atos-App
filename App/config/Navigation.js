@@ -1,6 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
+import { store, persistor } from '../redux/store';
 
 import Home from '../screens/Home';
 import Comousar from '../screens/Comousar';
@@ -39,7 +43,11 @@ const MainStackScreen = () => (
 );
 
 export default () => (
-  <NavigationContainer>
-    <MainStackScreen />
-  </NavigationContainer>
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <NavigationContainer>
+        <MainStackScreen />
+      </NavigationContainer>
+    </PersistGate>
+  </Provider>
 );
