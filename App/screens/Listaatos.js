@@ -5,7 +5,6 @@ import {
   Text,
   View,
   FlatList,
-  Image,
 } from 'react-native';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -46,90 +45,64 @@ export default ( {navigation} ) => {
   const renderItem = ({ item }) => {
     return (
       <View style={{ marginVertical: 12 }}>
-        <View style={{ flexDirection: 'row', flex: 1 }}>
-          {/* Book Cover */}
-          <Image
-            source={{ uri: item.image_url }}
-            resizeMode='cover'
-            style={{ width: 100, height: 150, borderRadius: 10 }}
-          />
-          {/* Book Metadata */}
-          <View style={{ flex: 1, marginLeft: 12 }}>
-            {/* Book Title */}
-            <View>
-              <Text style={{ fontSize: 22, paddingRight: 16, color: 'white' }}>
-                {item.title}
-              </Text>
-            </View>
-            {/* Meta info */}
-            <View
+        <View style={{ 
+          flex: 1, 
+          marginLeft: 12, 
+          flexDirection: 'row', 
+          alignItems: 'center' }}
+        >
+          
+          {/* Buttons */}
+          <View>
+            <TouchableOpacity
+              onPress={() =>
+                ifExists(item)
+                  ? handleRemoveBookmark(item)
+                  : handleAddBookmark(item)
+              }
+              activeOpacity={0.7}
               style={{
                 flexDirection: 'row',
-                marginTop: 10,
-                alignItems: 'center'
+                padding: 2,
+                backgroundColor: ifExists(item) ? '#F96D41' : '#2D3038',
+                borderRadius: 20,
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: 40,
+                width: 40
               }}
             >
               <MaterialCommunityIcons
-                color='#64676D'
-                name='book-open-page-variant'
-                size={20}
+                color={ifExists(item) ? 'white' : '#6D78FF'}
+                size={24}
+                name={ifExists(item) ? 'checkbox-marked' : 'checkbox-blank-outline'}
               />
-              <Text style={{ fontSize: 14, paddingLeft: 10, color: '#64676D' }}>
-                {item.num_pages}
-              </Text>
-              <MaterialCommunityIcons
-                color='#64676D'
-                name='star'
-                size={20}
-                style={{ paddingLeft: 16 }}
-              />
-              <Text style={{ fontSize: 14, paddingLeft: 10, color: '#64676D' }}>
-                {item.rating}
-              </Text>
-            </View>
-            {/* Buttons */}
-            <View style={{ marginTop: 14 }}>
-              <TouchableOpacity
-                onPress={() =>
-                  ifExists(item)
-                    ? handleRemoveBookmark(item)
-                    : handleAddBookmark(item)
-                }
-                activeOpacity={0.7}
-                style={{
-                  flexDirection: 'row',
-                  padding: 2,
-                  backgroundColor: ifExists(item) ? '#F96D41' : '#2D3038',
-                  borderRadius: 20,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: 40,
-                  width: 40
-                }}
-              >
-                <MaterialCommunityIcons
-                  color={ifExists(item) ? 'white' : '#64676D'}
-                  size={24}
-                  name={ifExists(item) ? 'bookmark-outline' : 'bookmark'}
-                />
-              </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
           </View>
+          
+          {/* Book Title */}
+          <View>
+            <TouchableOpacity onPress={() => navigation.push('Ato1')}>
+              <Text style={{ fontSize: 22, paddingLeft: 16, color: 'black' }}>
+                {item.title}
+              </Text>
+            </TouchableOpacity>
+          </View>
+
+          
         </View>
       </View>
     );
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#1E1B26' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 
       <View style={{ flex: 1, paddingHorizontal: 16 }}>
 
         <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
-          <MaterialCommunityIcons name="home" size={50} color='white' style={{paddingTop: 5}} />
+          <MaterialCommunityIcons name="home" size={50} color='black' style={{paddingTop: 10}} />
         </TouchableOpacity>
-
-        <Text style={{ color: 'white', fontSize: 22 }}>Bestsellers</Text>
 
         <View style={{ flex: 1, marginTop: 8 }}>
           <FlatList

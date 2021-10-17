@@ -56,12 +56,12 @@ export default ({ navigation }) => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.textStyleOne} onPress={() => navigation.push('Home')}>
-          <TextItem style={styles.textStyleOne} text="Como Usar" />
+          <TextItem style={styles.textStyleOne} text="Ato 1" />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
           <TextItemThree 
-            text="O propósito deste aplicativo é poder bla bla bla bla bla bla" 
+            text="Esse é o Ato número 1" 
           />
         </TouchableOpacity>
 
