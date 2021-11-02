@@ -2,9 +2,7 @@ import React from 'react';
 import { 
   SafeAreaView, 
   ScrollView, 
-  TouchableOpacity, 
-  Linking, 
-  Alert,
+  TouchableOpacity,
   StatusBar,
   Dimensions,
   StyleSheet,
@@ -19,12 +17,6 @@ import { TextItem } from '../components/TextItem'
 import { TextItemThree } from '../components/TextItemThree'
 
 const screen = Dimensions.get('window');
-
-const openUrl = (url) => {
-  return Linking.openURL(url).catch(() => {
-  Alert.alert('Desculpe, algo deu errado.', 'Por favor tente de novo mais tarde.');
-});
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -51,19 +43,15 @@ export default ({ navigation }) => {
       <ScrollView>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
-        <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Home')}>
-          <Entypo name="home" size={50} color={colors.black} style={{paddingTop: 5}} />
+        <TouchableOpacity style={{alignItems: 'center'}} onPress={() => navigation.push('Listaatos')}>
+          <Entypo name="list" size={50} color={colors.black} style={{paddingTop: 5}} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.textStyleOne} onPress={() => navigation.push('Home')}>
-          <TextItem style={styles.textStyleOne} text="Ato 13" />
-        </TouchableOpacity>
+        <TextItem style={styles.textStyleOne} text="Ato 13" />
 
-        <TouchableOpacity onPress={() => openUrl('https://www.kurytibametropole.org/')}>
-          <TextItemThree 
-            text="Esse é o Ato número 13" 
-          />
-        </TouchableOpacity>
+        <TextItemThree 
+          text="Esse é o Ato número 13" 
+        />
 
       </ScrollView>
     </SafeAreaView>

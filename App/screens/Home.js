@@ -71,7 +71,28 @@ const styles = StyleSheet.create({
 
 export default ({ navigation }) => {
   
-  const atosArray = ['Comousar', 'Listaatos', 'Ato1']
+  const atosArray = [ 
+    'Ato1', 
+    'Ato2', 
+    'Ato3',
+    'Ato4',
+    'Ato5',
+    'Ato6',
+    'Ato7',
+    'Ato8',
+    'Ato9',
+    'Ato10',
+    'Ato11',
+    'Ato12',
+    'Ato13',
+    'Ato14',
+    'Ato15',
+    'Ato16',
+    'Ato17',
+    'Ato18',
+    'Ato19',
+    'Ato20',
+  ]
   
   return (
     <SafeAreaView style={styles.container}>
