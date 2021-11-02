@@ -82,7 +82,7 @@ export default ( {navigation} ) => {
           
           {/* Book Title */}
           <View>
-            <TouchableOpacity onPress={() => navigation.push('Ato1')}>
+            <TouchableOpacity onPress={() => navigation.push(item.description)}>
               <Text style={{ fontSize: 22, paddingLeft: 16, color: 'black' }}>
                 {item.title}
               </Text>
